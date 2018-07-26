@@ -1,28 +1,30 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import React from 'react';
+import Link from 'gatsby-link';
 
 const IndexPage = (props) => {
   const sauces = props.data.allSauce.edges;
   return (
     <div>
-      <h1>Hi people</h1>
-      <p>Welcome to your new Gatsby ham.</p>
-      <p>Now go build something great.</p>
       {sauces.map((sauce, i) => {
         const sauceData = sauce.node;
         return (
           <div key={i}>
-            <p>Maker: {sauceData.maker}</p>
-            <p>Name: {sauceData.name}</p>
+            <Link
+              to={sauceData.url_slug}
+              css={{ textDecoration: `none`, color: `inherit` }}
+            >
+              <p>
+                {sauceData.name}
+              </p>
+            </Link>
           </div>
         );
       })}
-      <Link to="/page-2/">Go to page 2</Link>
     </div>
   );
 };
 
-export default IndexPage
+export default IndexPage;
 
 export const query = graphql`
   query SauceQuery {
@@ -32,6 +34,7 @@ export const query = graphql`
           id
           name
           maker
+          url_slug
         }
       }
     }
