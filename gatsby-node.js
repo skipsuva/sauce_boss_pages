@@ -78,7 +78,6 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   if (node.internal.type === `Sauce`) {
     // console.log(node)
     const slug = `/${node.url_slug}/`;
-    console.log(slug)
 
     createNodeField({
       node,
@@ -105,7 +104,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       }
     `
   ).then(result => {
-      console.log(JSON.stringify(result, null, 4))
       result.data.allSauce.edges.forEach(({ node }) => {
         createPage({
           path: node.fields.slug,

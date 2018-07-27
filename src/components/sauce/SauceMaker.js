@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import MakerMap from './SauceMaker/MakerMap';
 
 const SauceMaker = (props) => (
   <div>
@@ -6,7 +7,9 @@ const SauceMaker = (props) => (
     <p>Maker Sauces: {props.maker_sauce_count}</p>
     <p>About: {props.about}</p>
     <p>Lat/Long: {props.latitude} / {props.longitude}</p>
+
+    <MakerMap latitude={props.latitude} longitude={props.longitude}/>
   </div>
 );
 
-export default SauceMaker
+export default SauceMaker;
