@@ -3,11 +3,12 @@ import SauceHeader from "../components/sauce/SauceHeader";
 import SauceInfo from "../components/sauce/SauceInfo";
 import SauceMaker from "../components/sauce/SauceMaker";
 import SauceReviews from "../components/sauce/SauceReviews";
+import './sauce.css';
 
 export default ({ data }) => {
   const sauce = data.sauce;
   return (
-    <div>
+    <div id="sauce-container" className="container">
       <SauceHeader
         name={sauce.name}
         maker={sauce.maker}

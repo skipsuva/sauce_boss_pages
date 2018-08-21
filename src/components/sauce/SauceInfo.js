@@ -2,9 +2,10 @@ import React from 'react';
 import SauceFlavor from './SauceInfo/SauceFlavor';
 import SauceHeat from './SauceInfo/SauceHeat';
 import SauceLinger from './SauceInfo/SauceLinger';
+import './SauceInfo.scss';
 
 const SauceInfo = (props) => (
-  <div>
+  <div id="sauce-info">
     <p>Heat: {props.average_heat}</p>
     <p>Linger: {props.average_linger}</p>
 
